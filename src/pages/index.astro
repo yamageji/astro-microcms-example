@@ -1,9 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import { getCats } from '@library/useApi';
+import CatsList from '@components/CatsList.svelte';
+
+const cats = await getCats();
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1 class="text-blue-500">Dear Cats</h1>
+    {cats && <CatsList cats={cats.contents} />}
   </main>
 </Layout>
