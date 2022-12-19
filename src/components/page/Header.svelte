@@ -1,5 +1,7 @@
 <header>
-  <div class="bg-stone-200 px-4 py-4 text-3xl font-bold text-stone-800">
+  <div
+    class="border-b border-stone-200  px-6 py-4 font-barlow-semi text-3xl font-bold text-stone-700"
+  >
     Dear Cats
   </div>
 </header>
