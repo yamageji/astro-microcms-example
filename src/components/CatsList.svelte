@@ -19,7 +19,7 @@
           height={cat.image.height}
           width={cat.image.width}
           alt=""
-          class="h-32 w-32 rounded-md"
+          class="h-24 w-24 rounded-md"
         />
         <div class="">
           <h2 class="text-2xl font-bold">{cat.title}</h2>

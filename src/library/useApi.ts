@@ -22,22 +22,12 @@ const client = createClient({
 });
 
 export const getCats = async (queries?: MicroCMSQueries) => {
-  try {
-    return await client.get<CatsResponse>({ endpoint: 'cats', queries });
-  } catch (error) {
-    console.log('~~ getCats ~~');
-    console.log(error);
-  }
+  return await client.get<CatsResponse>({ endpoint: 'cats', queries });
 };
 export const getCat = async (contentId: string, queries?: MicroCMSQueries) => {
-  try {
-    return await client.getListDetail<Cats>({
-      endpoint: 'cats',
-      contentId,
-      queries,
-    });
-  } catch (error) {
-    console.log('~~ getCats ~~');
-    console.log(error);
-  }
+  return await client.getListDetail<Cats>({
+    endpoint: 'cats',
+    contentId,
+    queries,
+  });
 };

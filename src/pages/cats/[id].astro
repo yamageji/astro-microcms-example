@@ -4,7 +4,7 @@ import { getCats, getCat } from '@library/useApi';
 
 export const getStaticPaths = async () => {
   const response = await getCats({ fields: ['id'] });
-  return response?.contents.map((content) => ({
+  return response.contents.map((content) => ({
     params: {
       id: content.id,
     },
@@ -17,13 +17,13 @@ const cat = await getCat(id as string);
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>{cat?.title}</h1>
-    <p class="publishedAt">公開日時：{cat?.publishedAt}</p>
-    <div class="post" set:html={cat?.content} />
+    <h1>{cat.title}</h1>
+    <p class="publishedAt">公開日時：{cat.publishedAt}</p>
+    <div class="post" set:html={cat.content} />
     <img
-      src={cat?.image.url}
-      height={cat?.image.height}
-      width={cat?.image.width}
+      src={cat.image.url}
+      height={cat.image.height}
+      width={cat.image.width}
       alt=""
       class="w-20"
     />

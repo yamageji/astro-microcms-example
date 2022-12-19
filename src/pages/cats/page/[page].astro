@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCats } from '@library/useApi';
+import Pagination from '@components/UI/Pagination.svelte';
+import type { GetStaticPathsOptions } from 'astro';
+import CatsList from '@components/CatsList.svelte';
+
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+  const cats = await getCats();
+  return paginate(cats.contents, { pageSize: 2 });
+};
+const { page } = Astro.props;
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <CatsList cats={page.data} />
+    <div class="mt-10">
+      <Pagination {page} />
+    </div>
+  </main>
+</Layout>

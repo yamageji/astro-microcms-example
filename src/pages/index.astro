@@ -8,6 +8,6 @@ const cats = await getCats();
 
 <Layout title="Welcome to Astro.">
   <main>
-    {cats && <CatsList cats={cats.contents} />}
+    <CatsList cats={cats.contents} />
   </main>
 </Layout>
