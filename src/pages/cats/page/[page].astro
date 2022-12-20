@@ -4,9 +4,10 @@ import { getCats } from '@library/useApi';
 import PaginationList from '@components/UI/PaginationList.svelte';
 import type { GetStaticPathsOptions } from 'astro';
 import CatsList from '@components/CatsList.svelte';
+import PaginationSample from '@components/UI/PaginationSample.svelte';
 
 export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
-  const cats = await getCats();
+  const cats = await getCats({ limit: 100 });
   return paginate(cats.contents, { pageSize: 3 });
 };
 const { page } = Astro.props;
@@ -15,8 +16,13 @@ const { page } = Astro.props;
 <Layout title="Dear Cats">
   <main>
     <CatsList cats={page.data} />
-    <div class="mt-12">
+
+    <!-- <div class="mt-12">
       <PaginationList {page} />
+    </div> -->
+
+    <div class="mt-12">
+      <PaginationSample page={page} />
     </div>
   </main>
 </Layout>

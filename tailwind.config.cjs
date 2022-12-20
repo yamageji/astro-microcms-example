@@ -5,9 +5,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'barlow-semi': ["'Barlow Semi Condensed'", 'sans-serif'],
-        screens: {
-          xs: '580px',
-        },
+      },
+      screens: {
+        xs: '560px',
       },
       gridTemplateRows: {
         layout: 'auto minmax(0, 1fr) auto',

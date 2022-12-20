@@ -7,14 +7,14 @@
 </script>
 
 <ul
-  class="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3"
+  class="xs:grid-cols-2 mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3"
 >
   {#each cats as cat (cat.id)}
     <li class="">
       <a
         href={`/cats/${cat.id}`}
-        class="flex h-full gap-3 rounded-md
-         border border-stone-300 bg-stone-100 p-2 shadow-sm duration-150 hover:bg-stone-200 sm:flex-col"
+        class="flex h-full flex-col gap-3
+         rounded-md border border-stone-300 bg-stone-100 p-2 shadow-sm duration-150 hover:bg-stone-200"
       >
         <img
           src={cat.image.url}
