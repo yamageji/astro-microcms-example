@@ -2,19 +2,23 @@
 import Layout from '@layouts/Layout.astro';
 import { getCats } from '@library/useApi';
 import CatsList from '@components/CatsList.svelte';
+import SampleList from '@components/SampleList.astro';
+import type { GetStaticPathsOptions } from 'astro';
 
-const cats = await getCats({ limit: 3 });
+const data = await getCats({ limit: 1000 });
+const cats = data.contents;
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <CatsList cats={cats.contents} />
+    <!-- <CatsList cats={cats.contents} />
     <div class="mt-10">
       <a
         href="/cats/page/1"
         class="rounded-full border border-stone-500 bg-stone-200 py-2 px-6 font-barlow-semi font-bold duration-150 hover:bg-stone-300"
         >more cats</a
       >
-    </div>
+    </div> -->
+    <SampleList cats={cats} />
   </main>
 </Layout>

@@ -20,10 +20,10 @@ const cat = await getCat(id as string);
   <main>
     <div class="mx-auto flex max-w-2xl flex-col items-start gap-8 xs:flex-row">
       <img
-        src={cat.image.url}
-        height={cat.image.height}
-        width={cat.image.width}
-        alt=""
+        src={cat.image.image.url}
+        height={cat.image.image.height}
+        width={cat.image.image.width}
+        alt={cat.image.alt}
         class="aspect-square w-full grow-0 rounded-md shadow-sm xs:w-60"
       />
 

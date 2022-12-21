@@ -1,0 +1,15 @@
+---
+import type { Cats } from '@library/useApi';
+const cats: Cats[] = Astro.props.cats;
+---
+
+<ul class="flex flex-col gap-2 px-6">
+  {
+    cats.map((cat) => (
+      <li class="list-item list-disc">
+        <h2>{cat.title}</h2>
+        <time>{cat.date}</time>
+      </li>
+    ))
+  }
+</ul>

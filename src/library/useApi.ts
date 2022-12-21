@@ -9,10 +9,15 @@ import type {
 export type Cats = {
   title: string;
   date: string;
-  image: MicroCMSImage;
-  category: ['mugi', 'hana'];
+  image: {
+    fieldId: string;
+    image: MicroCMSImage;
+    alt: string;
+  };
+  category: string[];
   content: string;
 };
+
 export type CatsResponse = MicroCMSListResponse<Cats>;
 export type CatResponse = Cats & MicroCMSListContent;
 

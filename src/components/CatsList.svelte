@@ -7,7 +7,7 @@
 </script>
 
 <ul
-  class="xs:grid-cols-2 mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3"
+  class="mx-auto grid max-w-4xl grid-cols-1 gap-6 xs:grid-cols-2 md:grid-cols-3"
 >
   {#each cats as cat (cat.id)}
     <li class="">
@@ -17,10 +17,10 @@
          rounded-md border border-stone-300 bg-stone-100 p-2 shadow-sm duration-150 hover:bg-stone-200"
       >
         <img
-          src={cat.image.url}
-          height={cat.image.height}
-          width={cat.image.width}
-          alt=""
+          src={cat.image.image.url}
+          height={cat.image.image.height}
+          width={cat.image.image.width}
+          alt={cat.image.alt}
           class="aspect-square w-full rounded-md shadow-sm"
         />
         <div class="mb-6 px-1">
