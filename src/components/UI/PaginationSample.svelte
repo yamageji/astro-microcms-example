@@ -11,7 +11,7 @@
       <li>
         <a
           href={page.url.prev}
-          class="rounded-md border border-stone-500 px-4 py-2"
+          class="rounded-sm border border-stone-500 bg-stone-100 px-2 py-1 duration-150 hover:bg-stone-200"
         >
           PREV
         </a>
@@ -21,7 +21,7 @@
       <li>
         <a
           href={page.url.next}
-          class="rounded-md border border-stone-500 px-4 py-2"
+          class="rounded-sm border border-stone-500 bg-stone-100 px-2 py-1 duration-150 hover:bg-stone-200"
         >
           NEXT
         </a>

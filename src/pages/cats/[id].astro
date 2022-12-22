@@ -16,7 +16,7 @@ const { id } = Astro.params;
 const cat = await getCat(id as string);
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={`${cat.title} | Dear Cats`}>
   <main>
     <div class="mx-auto flex max-w-2xl flex-col items-start gap-8 xs:flex-row">
       <img
