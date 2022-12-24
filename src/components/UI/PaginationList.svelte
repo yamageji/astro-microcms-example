@@ -4,6 +4,7 @@
   import type { Page } from 'astro';
 
   export let page: Page;
+  export let adjacentPageNumber = 1;
 
   const pager = [...Array(page.lastPage).keys()].map((i) => ++i);
   const getPath = (page: number) => {
@@ -21,7 +22,7 @@
       </li>
     {/if}
 
-    {#if 3 < page.currentPage}
+    {#if adjacentPageNumber + 1 < page.currentPage}
       <li>
         <PaginationItem
           currentPage={page.currentPage}
@@ -33,7 +34,7 @@
     {/if}
 
     {#each pager as p (p)}
-      {#if page.currentPage - 2 <= p && p <= page.currentPage + 2}
+      {#if page.currentPage - adjacentPageNumber <= p && p <= page.currentPage + adjacentPageNumber}
         <li>
           <PaginationItem
             currentPage={page.currentPage}
@@ -44,7 +45,7 @@
       {/if}
     {/each}
 
-    {#if page.currentPage + 2 < page.lastPage}
+    {#if page.currentPage < page.lastPage - adjacentPageNumber}
       <li>&#8230;</li>
       <li>
         <PaginationItem

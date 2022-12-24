@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { getCats } from '@library/useApi';
 import CatsList from '@components/CatsList.svelte';
 
-const data = await getCats({ limit: 1000 });
+const data = await getCats({ limit: 3 });
 const cats = data.contents;
 ---
 
